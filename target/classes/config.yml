@@ -1,0 +1,31 @@
+///////////////////////////////////////
+/// Ein SkyPvP-System für die 1.8.x ///
+///         Coded by XenoDEV        ///
+///////////////////////////////////////
+
+--// Du kannst hier mit Colorcodes arbeiten (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+prefix: '&8[&e&lSkyPvP&8]'
+error: '&0[&4&lERROR&0]'
+
+--// Hier kannst du deine eigenen Daten eintragen
+website: 'yoursite.org'
+discord: 'yourdc.gg'
+teamspeak: 'yourts.de'
+
+--// Entscheide hier wie die Daten von den Spielen abgespeichert werden solln
+--// Ändere es zu MySQL oder File
+datasave: File
+MySQL:
+  host: 'localhost'
+  database: 'testbase'
+  username: 'owner'
+  password: '1234'
+
+--// Ändere hier die Eigenschaften deines Scoreboards manche auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+--// Wähle bei Info zwischen Website, Discord, Teamspeak
+Scoreboard:
+  display: '&e&lSkyPvP-Board'
+  info: 'Website'
+
+--//Setze hier die Todeszone beim runterfallen (Kann auch InGame gesetzt werden)
+deathheight: 20

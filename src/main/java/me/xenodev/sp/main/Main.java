@@ -36,6 +36,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        getConfig().options().copyDefaults(true);
         ConfigFilebuilder.getConfig();
 
         if(datasave.equalsIgnoreCase("MySQL")){
