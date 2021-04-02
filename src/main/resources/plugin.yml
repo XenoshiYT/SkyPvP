@@ -1,0 +1,19 @@
+name: SkyPvP
+author: XenoDev
+version: 1.0
+
+main: me.xenodev.sp.main.Main
+
+commands:
+  spawn:
+    description: Teleportiere dich zum Spawn
+  oz:
+    description: Zeige die Onlinezeit an
+  ot:
+    description: Zeige die Onlinezeit an
+  onlinezeit:
+    description: Zeige die Onlinezeit an
+  onlinetime:
+    description: Zeige die Onlinezeit an
+  stats:
+    description: Zeige die Stats an
