@@ -35,6 +35,8 @@ public class Main extends JavaPlugin {
     public String scoreboarddisplay;
     public String scoreboardinfo;
     public Integer deathheight;
+    public Boolean falldamage;
+    public Boolean fooddamage;
 
     public Integer killcoins;
     public Integer startcoins;
@@ -133,6 +135,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WeatherEvent(), this);
         getServer().getPluginManager().registerEvents(new KitSelectEvent(), this);
         getServer().getPluginManager().registerEvents(new ChatEvent(), this);
+        getServer().getPluginManager().registerEvents(new FallDamageEvent(), this);
+        getServer().getPluginManager().registerEvents(new FoodEvent(), this);
     }
 
     private void checkPlugins(){

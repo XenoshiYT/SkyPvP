@@ -55,11 +55,31 @@ public class KitCMD implements CommandExecutor {
                     inv.setItem(i, new ItemBuilder(Material.STAINED_GLASS_PANE, (short) 15).build());
                 }
 
-                inv.setItem(11, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit1head).setName(Main.getInstance().kit1name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit1cost).build());
-                inv.setItem(15, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit2head).setName(Main.getInstance().kit2name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit2cost).build());
-                inv.setItem(28, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit3head).setName(Main.getInstance().kit3name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit3cost).build());
-                inv.setItem(34, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit4head).setName(Main.getInstance().kit4name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit4cost).build());
-                inv.setItem(40, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit5head).setName(Main.getInstance().kit5name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit5cost).build());
+                if(KitItemBuilder.file1.exists()) {
+                    inv.setItem(11, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit1head).setName(Main.getInstance().kit1name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit1cost).build());
+                }else{
+                    inv.setItem(11, new ItemBuilder(Material.BARRIER).setName("§cDieses Kit existiert nicht").build());
+                }
+                if(KitItemBuilder.file2.exists()) {
+                    inv.setItem(15, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit2head).setName(Main.getInstance().kit2name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit2cost).build());
+                }else{
+                    inv.setItem(15, new ItemBuilder(Material.BARRIER).setName("§cDieses Kit existiert nicht").build());
+                }
+                if(KitItemBuilder.file3.exists()) {
+                    inv.setItem(28, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit3head).setName(Main.getInstance().kit3name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit3cost).build());
+                }else{
+                    inv.setItem(28, new ItemBuilder(Material.BARRIER).setName("§cDieses Kit existiert nicht").build());
+                }
+                if(KitItemBuilder.file4.exists()) {
+                    inv.setItem(34, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit4head).setName(Main.getInstance().kit4name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit4cost).build());
+                }else{
+                    inv.setItem(34, new ItemBuilder(Material.BARRIER).setName("§cDieses Kit existiert nicht").build());
+                }
+                if(KitItemBuilder.file5.exists()) {
+                    inv.setItem(40, new ItemBuilder(Material.SKULL_ITEM, (short) 3).setOwnerURL(Main.getInstance().kit5head).setName(Main.getInstance().kit5name.replace("&", "§")).setLore("", "§7Das Kit kostet: §c" + Main.getInstance().kit5cost).build());
+                }else{
+                    inv.setItem(40, new ItemBuilder(Material.BARRIER).setName("§cDieses Kit existiert nicht").build());
+                }
 
                 p.openInventory(inv);
             }

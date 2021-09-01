@@ -26,6 +26,8 @@ public class ConfigReloadCMD implements CommandExecutor {
                     p.sendMessage(Main.getError() + " §cDer Befehl §6" + args[0] + " §cexisitiert nicht!");
                     p.sendMessage(Main.getPrefix() + " §7Benutze den Befehl <reload>");
                 }
+            }else{
+                p.sendMessage(Main.getPrefix() + " §7Benutze den Befehl /config <reload>");
             }
 
         }

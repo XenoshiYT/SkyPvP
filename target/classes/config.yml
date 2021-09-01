@@ -42,21 +42,31 @@ Scoreboard:
 ### Setze hier die Todeszone beim runterfallen (Kann auch InGame gesetzt werden)
 deathheight: 20
 
+### Entscheide hier was aktiviert oder deaktiviert sein soll
+falldamage: false
+fooddamage: false
+
 ### Setze hier die Coins für Kills und die Kits. Namen auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+### Ändere die Köpfe der Kits im Inventar (Webseite: https://minecraft-heads.com/custom-heads)
 killcoins: 100
 startcoins: 100
 kit1:
   name: '&e&5Kit1'
   cost: 20
+  head: 'http://textures.minecraft.net/texture/5ae826e7db8447fbd62988fee0e83bbdd694378aef12d2572e975f059a54990'
 kit2:
   name: '&e&4Kit2'
   cost: 20
+  head: 'http://textures.minecraft.net/texture/41269584f629227713107b4e0a02dd65ddfe780e7c7118cb1ec2275c514cc95d'
 kit3:
   name: '&e&3Kit3'
   cost: 20
+  head: 'http://textures.minecraft.net/texture/54bf893fc6defad218f7836efefbe636f1c2cc1bb650c82fccd99f2c1ee6'
 kit4:
   name: '&e&2Kit4'
   cost: 20
+  head: 'http://textures.minecraft.net/texture/126b772329cf32f8643c4928626b6a325233ff61aa9c7725873a4bd66db3d692'
 kit5:
   name: '&e&1Kit5'
   cost: 20
+  head: 'http://textures.minecraft.net/texture/9631597dce4e4051e8d5a543641966ab54fbf25a0ed6047f11e6140d88bf48f'

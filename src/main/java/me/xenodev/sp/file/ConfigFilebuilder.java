@@ -28,6 +28,9 @@ public class ConfigFilebuilder {
 
         Main.getInstance().deathheight = Main.getInstance().getConfig().getInt("deathheight");
 
+        Main.getInstance().falldamage = Main.getInstance().getConfig().getBoolean("falldamage");
+        Main.getInstance().fooddamage = Main.getInstance().getConfig().getBoolean("fooddamage");
+
         Main.getInstance().killcoins = Main.getInstance().getConfig().getInt("killcoins");
         Main.getInstance().startcoins = Main.getInstance().getConfig().getInt("startcoins");
         Main.getInstance().kit1cost = Main.getInstance().getConfig().getInt("kit1.cost");

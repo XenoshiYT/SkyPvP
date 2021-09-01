@@ -13,19 +13,19 @@ import java.util.List;
 
 public class KitItemBuilder {
 
-    private static File file1 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit1.yml");
+    public static File file1 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit1.yml");
     public static YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(file1);
 
-    private static File file2 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit2.yml");
+    public static File file2 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit2.yml");
     public static YamlConfiguration cfg2 = YamlConfiguration.loadConfiguration(file2);
 
-    private static File file3 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit3.yml");
+    public static File file3 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit3.yml");
     public static YamlConfiguration cfg3 = YamlConfiguration.loadConfiguration(file3);
 
-    private static File file4 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit4.yml");
+    public static File file4 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit4.yml");
     public static YamlConfiguration cfg4 = YamlConfiguration.loadConfiguration(file4);
 
-    private static File file5 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit5.yml");
+    public static File file5 = new File("plugins//" + Main.getInstance().getName() + "//Kit", "kit5.yml");
     public static YamlConfiguration cfg5 = YamlConfiguration.loadConfiguration(file5);
 
     public static void getKit(Player p, String kit){

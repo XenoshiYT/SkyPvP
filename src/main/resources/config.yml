@@ -42,6 +42,10 @@ Scoreboard:
 ### Setze hier die Todeszone beim runterfallen (Kann auch InGame gesetzt werden)
 deathheight: 20
 
+### Entscheide hier was aktiviert oder deaktiviert sein soll
+falldamage: false
+fooddamage: false
+
 ### Setze hier die Coins für Kills und die Kits. Namen auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
 ### Ändere die Köpfe der Kits im Inventar (Webseite: https://minecraft-heads.com/custom-heads)
 killcoins: 100
