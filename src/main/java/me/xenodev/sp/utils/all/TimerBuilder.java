@@ -11,6 +11,8 @@ public class TimerBuilder {
 
     private static int sched1;
     private static int sched2;
+    private static int sched3;
+
 
     public static void startScoreboard() {
     if (!Bukkit.getScheduler().isCurrentlyRunning(sched1)) {
@@ -54,6 +56,19 @@ public class TimerBuilder {
                                 TimeFilebuilder.setMinutes(all, 0);
                             }
                         }
+                    }
+                }
+            }, 0L, 20L);
+        }
+    }
+
+    public static void startTablist() {
+        if (!Bukkit.getScheduler().isCurrentlyRunning(sched3)) {
+            sched3 = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), (Runnable)new Runnable() {
+                @Override
+                public void run() {
+                    for (final Player all : Bukkit.getOnlinePlayers()) {
+                        HeaderFooterBuilder.sendTab(all, "\n" + Main.getInstance().header + "\n", "\n" + Main.getInstance().footer + "\n");
                     }
                 }
             }, 0L, 20L);

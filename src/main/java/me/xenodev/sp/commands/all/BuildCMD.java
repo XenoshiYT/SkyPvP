@@ -20,18 +20,18 @@ public class BuildCMD implements CommandExecutor {
 
         if(cmd.getName().equalsIgnoreCase("build")) {
             if (!p.hasPermission("skypvp.allow.build")) {
-                p.sendMessage(Main.getInstance().error + " §cDu hast dazu keine Rechte. Du benötigst: §6" + "skypvp.allow.build");
+                p.sendMessage(Main.getError() + " §cDu hast dazu keine Rechte. Du benötigst: §6" + "skypvp.allow.build");
                 return true;
             }
 
             if (build.contains(p)) {
                 build.remove(p);
-                p.sendMessage(Main.getInstance().prefix + "§7Du hast den Buildingmodus §cverlassen");
-                p.setGameMode(GameMode.ADVENTURE);
+                p.sendMessage(Main.getPrefix() + "§7Du hast den Buildingmodus §cverlassen");
+                p.setGameMode(GameMode.SURVIVAL);
                 p.getInventory().clear();
             } else {
                 build.add(p);
-                p.sendMessage(Main.getInstance().prefix + "§7Du hast den Buildingmodus §cbetreten");
+                p.sendMessage(Main.getPrefix() + "§7Du hast den Buildingmodus §cbetreten");
                 p.setGameMode(GameMode.CREATIVE);
                 p.getInventory().clear();
             }

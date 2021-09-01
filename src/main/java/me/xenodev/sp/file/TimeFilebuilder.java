@@ -14,17 +14,17 @@ public class TimeFilebuilder {
     private static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 
     public static void setSeconds(OfflinePlayer p, Integer amount){
-        cfg.set(p.getUniqueId().toString() + ".Kills", amount);
+        cfg.set(p.getUniqueId().toString() + ".Seconds", amount);
         save();
     }
 
     public static void setMinutes(OfflinePlayer p, Integer amount){
-        cfg.set(p.getUniqueId().toString() + ".Deaths", amount);
+        cfg.set(p.getUniqueId().toString() + ".Minutes", amount);
         save();
     }
 
     public static void setHours(OfflinePlayer p, Integer amount){
-        cfg.set(p.getUniqueId().toString() + ".Streak", amount);
+        cfg.set(p.getUniqueId().toString() + ".Hours", amount);
         save();
     }
 

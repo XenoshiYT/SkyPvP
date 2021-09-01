@@ -192,7 +192,15 @@ public class StatsSQL {
     }
 
     public static Double getKD(UUID uuid){
-        Double kd = Double.valueOf(getKills(uuid) / getDeaths(uuid));
+        Double kd;
+
+        if(getDeaths(uuid) == 0 && getKills(uuid) == 0){
+            kd = 0.0;
+        } else if(getDeaths(uuid) == 0){
+            kd = Double.valueOf(getKills(uuid));
+        }else{
+            kd = Double.valueOf(getKills(uuid) / getDeaths(uuid));
+        }
         return kd;
     }
 }

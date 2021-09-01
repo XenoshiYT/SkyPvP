@@ -20,12 +20,12 @@ public class OnlinezeitCMD implements CommandExecutor {
             if(Main.getInstance().datasave.equalsIgnoreCase("MySQL")){
                 if(args.length == 1){
                     OfflinePlayer t = Bukkit.getOfflinePlayer(args[0]);
-                    p.sendMessage(Main.getInstance().prefix + "§7Die Onlinezeit von §e" + t.getName() + "§7:");
+                    p.sendMessage(Main.getPrefix() + "§7Die Onlinezeit von §e" + t.getName() + "§7:");
                     p.sendMessage("  §8§l» §7Stunden: §e" + TimeSQL.getHours(t.getUniqueId()));
                     p.sendMessage("  §8§l» §7Minuten: §e" + TimeSQL.getMinutes(t.getUniqueId()));
                     p.sendMessage("  §8§l» §7Sekunden: §e" + TimeSQL.getSeconds(t.getUniqueId()));
                 }else{
-                    p.sendMessage(Main.getInstance().prefix + "§7Die Onlinetime von §a§l" + "Dir" + "§7:");
+                    p.sendMessage(Main.getPrefix() + "§7Die Onlinetime von §a§l" + "Dir" + "§7:");
                     p.sendMessage("  §8§l» §7Stunden: §e" + TimeSQL.getHours(p.getUniqueId()));
                     p.sendMessage("  §8§l» §7Minuten: §e" + TimeSQL.getMinutes(p.getUniqueId()));
                     p.sendMessage("  §8§l» §7Sekunden: §e" + TimeSQL.getSeconds(p.getUniqueId()));
@@ -33,12 +33,12 @@ public class OnlinezeitCMD implements CommandExecutor {
             }else if(Main.getInstance().datasave.equalsIgnoreCase("File")){
                 if(args.length == 1){
                     OfflinePlayer t = Bukkit.getOfflinePlayer(args[0]);
-                    p.sendMessage(Main.getInstance().prefix + "§7Die Onlinezeit von §e" + t.getName() + "§7:");
+                    p.sendMessage(Main.getPrefix() + "§7Die Onlinezeit von §e" + t.getName() + "§7:");
                     p.sendMessage("§8§l» §7Stunden: §e" + TimeFilebuilder.getHours(t));
                     p.sendMessage("§8§l» §7Minuten: §e" + TimeFilebuilder.getMinutes(t));
                     p.sendMessage("§8§l» §7Sekunden: §e" + TimeFilebuilder.getSeconds(t));
                 }else{
-                    p.sendMessage(Main.getInstance().prefix + "§7Die Onlinetime von §a§l" + "Dir" + "§7:");
+                    p.sendMessage(Main.getPrefix() + "§7Die Onlinetime von §a§l" + "Dir" + "§7:");
                     p.sendMessage("  §8§l» §7Stunden: §e" + TimeFilebuilder.getHours(p));
                     p.sendMessage("  §8§l» §7Minuten: §e" + TimeFilebuilder.getMinutes(p));
                     p.sendMessage("  §8§l» §7Sekunden: §e" + TimeFilebuilder.getSeconds(p));

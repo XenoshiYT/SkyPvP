@@ -17,14 +17,14 @@ public class DeathheightCMD implements CommandExecutor {
         if(cmd.getName().equalsIgnoreCase("deathheight")){
             if(args.length == 1){
                 if(!p.hasPermission("skypvp.deathheight.set")) {
-                    p.sendMessage(Main.getInstance().error + " §cDu hast dazu keine Rechte. Du benötigst: §6" + "skypvp.deathheight.set");
+                    p.sendMessage(Main.getError() + " §cDu hast dazu keine Rechte. Du benötigst: §6" + "skypvp.deathheight.set");
                     return true;
                 }
 
                 Integer height = Integer.valueOf(args[0]);
 
                 Main.getInstance().getConfig().set("deathheight", height);
-                p.sendMessage(Main.getInstance().prefix + "§7Du hast die §6Todeshöhe §7gesetzt");
+                p.sendMessage(Main.getPrefix() + "§7Du hast die §6Todeshöhe §7gesetzt");
             }
         }
 

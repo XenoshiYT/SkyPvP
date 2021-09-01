@@ -17,3 +17,17 @@ commands:
     description: Zeige die Onlinezeit an
   stats:
     description: Zeige die Stats an
+  build:
+    description: Versetze dich in den Baumodus
+  deathheight:
+    description: Setze die Todeszone
+  coins:
+    description: Zeige die Coins an
+  kits:
+    description: Hol dir ein Kit
+  kit:
+    description: Hol dir ein Kit
+  config:
+    description: Lade die Configs neu
+  enchant:
+    description: Setze custom Enchantmenlevel auf ein Item

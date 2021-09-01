@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 public class StatsFilebuilder {
 
@@ -79,7 +80,15 @@ public class StatsFilebuilder {
     }
 
     public static Double getKD(OfflinePlayer p){
-        Double kd = Double.valueOf(getKills(p) / getDeaths(p));
+        Double kd;
+
+        if(getDeaths(p) == 0 && getKills(p) == 0){
+            kd = 0.0;
+        } else if(getDeaths(p) == 0){
+            kd = Double.valueOf(getKills(p));
+        }else{
+            kd = Double.valueOf(getKills(p) / getDeaths(p));
+        }
         return kd;
     }
 

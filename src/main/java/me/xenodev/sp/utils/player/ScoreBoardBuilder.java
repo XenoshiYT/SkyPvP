@@ -1,8 +1,10 @@
 package me.xenodev.sp.utils.player;
 
+import me.xenodev.sp.file.CoinsFilebuilder;
 import me.xenodev.sp.file.StatsFilebuilder;
 import me.xenodev.sp.file.TimeFilebuilder;
 import me.xenodev.sp.main.Main;
+import me.xenodev.sp.mysql.CoinsSQL;
 import me.xenodev.sp.mysql.StatsSQL;
 import me.xenodev.sp.mysql.TimeSQL;
 import org.bukkit.Bukkit;
@@ -26,26 +28,21 @@ public class ScoreBoardBuilder {
         obj.setDisplayName(Main.getInstance().scoreboarddisplay.replace("&", "§"));
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 
-        PermissionUser user = PermissionsEx.getPermissionManager().getUser(p);
-        //String amount = String.format("%.2f", Main.eco.getBalance(p));
-
-        // - Rang
-        // - Stats <Kills, Tode>
-        // - Time
-        // - Discord / Teamspeak / Webseite
-
-        obj.getScore("§5").setScore(13);
-        obj.getScore("§f§lRang").setScore(12);
-        obj.getScore(updateTeam(board, "rang", user.getPrefix().replace("&", "§"), "", ChatColor.BLUE)).setScore(11);
-        obj.getScore("§4").setScore(10);
-        obj.getScore("§f§lStats").setScore(9);
+        obj.getScore("§6").setScore(15);
+        obj.getScore("§f§lCoins").setScore(14);
+        obj.getScore("§5").setScore(12);
+        obj.getScore("§f§lKills").setScore(11);
+        obj.getScore("§4").setScore(9);
+        obj.getScore("§f§lTode").setScore(8);
         if(Main.getInstance().datasave.equalsIgnoreCase("File")){
-            obj.getScore(updateTeam(board, "kills", "  §8Kills:", "§e" + StatsFilebuilder.getKills(p), ChatColor.RED)).setScore(8);
-            obj.getScore(updateTeam(board, "deaths", "  §8Tode:", "§e" + StatsFilebuilder.getDeaths(p), ChatColor.GREEN)).setScore(8);
+            obj.getScore(updateTeam(board, "coins","§9" + CoinsFilebuilder.getCoins(p), "", ChatColor.BOLD)).setScore(13);
+            obj.getScore(updateTeam(board, "kills","§c" + StatsFilebuilder.getKills(p), "", ChatColor.RED)).setScore(10);
+            obj.getScore(updateTeam(board, "deaths","§c" + StatsFilebuilder.getDeaths(p), "", ChatColor.GREEN)).setScore(7);
             obj.getScore(updateTeam(board, "time", "§e" + TimeFilebuilder.changeTime(p), "", ChatColor.YELLOW)).setScore(4);
         }else if(Main.getInstance().datasave.equalsIgnoreCase("MySQL")){
-            obj.getScore(updateTeam(board, "kills", "  §8Kills:", "§e" + StatsSQL.getKills(p.getUniqueId()), ChatColor.RED)).setScore(8);
-            obj.getScore(updateTeam(board, "deaths", "  §8Tode:", "§e" + StatsSQL.getDeaths(p.getUniqueId()), ChatColor.GREEN)).setScore(8);
+            obj.getScore(updateTeam(board, "coins","§9" + CoinsSQL.getCoins(p.getUniqueId()), "", ChatColor.BOLD)).setScore(13);
+            obj.getScore(updateTeam(board, "kills","§c" + StatsSQL.getKills(p.getUniqueId()), "", ChatColor.RED)).setScore(10);
+            obj.getScore(updateTeam(board, "deaths","§c" + StatsSQL.getDeaths(p.getUniqueId()), "", ChatColor.GREEN)).setScore(7);
             obj.getScore(updateTeam(board, "time", "§e" + TimeSQL.changeTime(p.getUniqueId()), "", ChatColor.YELLOW)).setScore(4);
         }
         obj.getScore("§3").setScore(6);
@@ -53,13 +50,13 @@ public class ScoreBoardBuilder {
         obj.getScore("§2").setScore(3);
         if(Main.getInstance().scoreboardinfo.equalsIgnoreCase("Discord")){
             obj.getScore("§f§lDiscord").setScore(2);
-            obj.getScore(Main.getInstance().discord).setScore(1);
+            obj.getScore("§a" + Main.getInstance().discord).setScore(1);
         }else if(Main.getInstance().scoreboardinfo.equalsIgnoreCase("Teamspeak")){
             obj.getScore("§f§lTeamspeak").setScore(2);
-            obj.getScore(Main.getInstance().teamspeak).setScore(1);
+            obj.getScore("§a" + Main.getInstance().teamspeak).setScore(1);
         }else if(Main.getInstance().scoreboardinfo.equalsIgnoreCase("Website")){
             obj.getScore("§f§lWebseite").setScore(2);
-            obj.getScore(Main.getInstance().website).setScore(1);
+            obj.getScore("§a" + Main.getInstance().website).setScore(1);
         }
         obj.getScore("§1").setScore(0);
 
@@ -73,14 +70,15 @@ public class ScoreBoardBuilder {
 
         PermissionUser user = PermissionsEx.getPermissionManager().getUser(p);
 
-        obj.getScore(updateTeam(board, "rang", user.getPrefix().replace("&", "§"), "", ChatColor.BLUE)).setScore(11);
         if(Main.getInstance().datasave.equalsIgnoreCase("File")){
-            obj.getScore(updateTeam(board, "kills", "  §8Kills:", "§e" + StatsFilebuilder.getKills(p), ChatColor.RED)).setScore(8);
-            obj.getScore(updateTeam(board, "deaths", "  §8Tode:", "§e" + StatsFilebuilder.getDeaths(p), ChatColor.GREEN)).setScore(8);
+            obj.getScore(updateTeam(board, "coins","§9" + CoinsFilebuilder.getCoins(p), "", ChatColor.BOLD)).setScore(13);
+            obj.getScore(updateTeam(board, "kills","§c" + StatsFilebuilder.getKills(p), "", ChatColor.RED)).setScore(10);
+            obj.getScore(updateTeam(board, "deaths","§c" + StatsFilebuilder.getDeaths(p), "", ChatColor.GREEN)).setScore(7);
             obj.getScore(updateTeam(board, "time", "§e" + TimeFilebuilder.changeTime(p), "", ChatColor.YELLOW)).setScore(4);
         }else if(Main.getInstance().datasave.equalsIgnoreCase("MySQL")){
-            obj.getScore(updateTeam(board, "kills", "  §8Kills:", "§e" + StatsSQL.getKills(p.getUniqueId()), ChatColor.RED)).setScore(8);
-            obj.getScore(updateTeam(board, "deaths", "  §8Tode:", "§e" + StatsSQL.getDeaths(p.getUniqueId()), ChatColor.GREEN)).setScore(8);
+            obj.getScore(updateTeam(board, "coins","§9" + CoinsSQL.getCoins(p.getUniqueId()), "", ChatColor.BOLD)).setScore(13);
+            obj.getScore(updateTeam(board, "kills","§c" + StatsSQL.getKills(p.getUniqueId()), "", ChatColor.RED)).setScore(10);
+            obj.getScore(updateTeam(board, "deaths","§c" + StatsSQL.getDeaths(p.getUniqueId()), "", ChatColor.GREEN)).setScore(7);
             obj.getScore(updateTeam(board, "time", "§e" + TimeSQL.changeTime(p.getUniqueId()), "", ChatColor.YELLOW)).setScore(4);
         }
 
@@ -127,7 +125,7 @@ public class ScoreBoardBuilder {
                 ScoreBoardBuilder.team = p.getScoreboard().getTeam(getWeight(getGroups).toString());
             }
             ScoreBoardBuilder.team.addPlayer((OfflinePlayer)p2);
-            ScoreBoardBuilder.team.setPrefix(String.valueOf(String.valueOf(ChatColor.translateAlternateColorCodes('&', PermissionsEx.getPermissionManager().getUser(p2).getPrefix()))) + " §8| ");
+            ScoreBoardBuilder.team.setPrefix(String.valueOf(String.valueOf(ChatColor.translateAlternateColorCodes('&', PermissionsEx.getPermissionManager().getUser(p2).getPrefix()))) + " §8| §7");
         }
     }
 

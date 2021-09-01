@@ -1,19 +1,29 @@
-///////////////////////////////////////
-/// Ein SkyPvP-System für die 1.8.x ///
-///         Coded by XenoDEV        ///
-///////////////////////////////////////
+#########################################
+###  Ein SkyPvP-System für die 1.8.x  ###
+###          Coded by XenoDEV         ###
+#########################################
+#### Die Plugin Version lautet:  1.0 ####
 
---// Du kannst hier mit Colorcodes arbeiten (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+### Du kannst hier mit Colorcodes arbeiten (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+servername: '&e&lSkyPvP'
 prefix: '&8[&e&lSkyPvP&8]'
 error: '&0[&4&lERROR&0]'
 
---// Hier kannst du deine eigenen Daten eintragen
+
+### Du kannst hier mit Colorcodes arbeiten (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+### Variabeln gibt es (zum Beispiel: %player% = Playername, %online% = Onlineplayer, %max% = Maximale Spieler, %ping% = Spielerping)
+header: '&7> &ahallo %player% &8| &aPing: %ping% &7<'
+footer: '&7> &c%online% / %max% &7<'
+
+
+### Hier kannst du deine eigenen Daten eintragen
 website: 'yoursite.org'
 discord: 'yourdc.gg'
 teamspeak: 'yourts.de'
 
---// Entscheide hier wie die Daten von den Spielen abgespeichert werden solln
---// Ändere es zu MySQL oder File
+
+### Entscheide hier wie die Daten von den Spielen abgespeichert werden solln
+### Ändere es zu MySQL oder File
 datasave: File
 MySQL:
   host: 'localhost'
@@ -21,11 +31,38 @@ MySQL:
   username: 'owner'
   password: '1234'
 
---// Ändere hier die Eigenschaften deines Scoreboards manche auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
---// Wähle bei Info zwischen Website, Discord, Teamspeak
+
+### Ändere hier die Eigenschaften deines Scoreboards manche auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+### Wähle bei Info zwischen Website, Discord, Teamspeak
 Scoreboard:
   display: '&e&lSkyPvP-Board'
   info: 'Website'
 
---//Setze hier die Todeszone beim runterfallen (Kann auch InGame gesetzt werden)
+
+### Setze hier die Todeszone beim runterfallen (Kann auch InGame gesetzt werden)
 deathheight: 20
+
+### Setze hier die Coins für Kills und die Kits. Namen auch mit Colorcodes (zum Beispiel:&7&l&o | https://minecraft.tools/en/color-code.php)
+### Ändere die Köpfe der Kits im Inventar (Webseite: https://minecraft-heads.com/custom-heads)
+killcoins: 100
+startcoins: 100
+kit1:
+  name: '&e&5Kit1'
+  cost: 20
+  head: 'http://textures.minecraft.net/texture/5ae826e7db8447fbd62988fee0e83bbdd694378aef12d2572e975f059a54990'
+kit2:
+  name: '&e&4Kit2'
+  cost: 20
+  head: 'http://textures.minecraft.net/texture/41269584f629227713107b4e0a02dd65ddfe780e7c7118cb1ec2275c514cc95d'
+kit3:
+  name: '&e&3Kit3'
+  cost: 20
+  head: 'http://textures.minecraft.net/texture/54bf893fc6defad218f7836efefbe636f1c2cc1bb650c82fccd99f2c1ee6'
+kit4:
+  name: '&e&2Kit4'
+  cost: 20
+  head: 'http://textures.minecraft.net/texture/126b772329cf32f8643c4928626b6a325233ff61aa9c7725873a4bd66db3d692'
+kit5:
+  name: '&e&1Kit5'
+  cost: 20
+  head: 'http://textures.minecraft.net/texture/9631597dce4e4051e8d5a543641966ab54fbf25a0ed6047f11e6140d88bf48f'
