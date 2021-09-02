@@ -66,13 +66,13 @@ public class Main extends JavaPlugin {
         this.saveDefaultConfig();
         FileConfiguration fileConfiguration = this.getConfig();
         ConfigFilebuilder.getConfig();
-        System.out.println("-------------- [ " + prefix + " ] --------------");
-        System.out.println("Das Plugin wurde erfolgreich auf Version §5v" + getDescription().getVersion() + " §rgeladen!");
-        System.out.println("§6Coded by XenoDEV");
+        System.out.println("-------------- [ " + getDescription().getName() + " ] --------------");
+        System.out.println("Das Plugin wurde erfolgreich auf Version v" + getDescription().getVersion() + " geladen!");
+        System.out.println("Coded by XenoDEV");
         if(datasave.equalsIgnoreCase("MySQL")){
             ConnectMySQL();
         }
-        System.out.println("-------------- [ " + prefix + " ] --------------");
+        System.out.println("-------------- [ " + getDescription().getName() + " ] --------------");
 
         TimerBuilder.startScoreboard();
         TimerBuilder.startOnlinetime();
@@ -106,7 +106,7 @@ public class Main extends JavaPlugin {
         mysql.update("CREATE TABLE IF NOT EXISTS Time(UUID VARCHAR(100),HOURS BIGINT,MINUTES INT,SECONDS INT)");
         mysql.update("CREATE TABLE IF NOT EXISTS Stats(UUID VARCHAR(100),KILLS BIGINT,DEATHS BIGINT,STREAK BIGINT)");
         mysql.update("CREATE TABLE IF NOT EXISTS Coins(UUID VARCHAR(100),Coins BIGINT)");
-        System.out.println("§aDie MySQL-Verbindung wurde hergestellt");
+        System.out.println("Die MySQL-Verbindung wurde hergestellt");
     }
 
     private void commands(){
