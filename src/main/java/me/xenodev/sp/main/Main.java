@@ -123,6 +123,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginCommand("kits").setExecutor(new KitCMD());
         getServer().getPluginCommand("config").setExecutor(new ConfigReloadCMD());
         getServer().getPluginCommand("enchant").setExecutor(new EnchantCMD());
+        getServer().getPluginCommand("standard").setExecutor(new StandardCMD());
     }
 
     private void events(){

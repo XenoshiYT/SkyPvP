@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class RespawnItemBuilder {
 
-    public static void setStarterItems(Player p){
+    public static void setStandardItems(Player p){
 
         p.getInventory().setHelmet(new ItemBuilder(Material.LEATHER_HELMET).setEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1).setName("§e§lSkyPvP §8× §7Starter").build());
         p.getInventory().setChestplate(new ItemBuilder(Material.LEATHER_CHESTPLATE).setEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1).setName("§e§lSkyPvP §8× §7Starter").build());

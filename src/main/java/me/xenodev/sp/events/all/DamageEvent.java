@@ -39,7 +39,6 @@ public class DamageEvent implements Listener {
                     CoinsSQL.addCoins(k.getUniqueId(), Main.getInstance().killcoins);
                 }
                 RespawnBuilder.respawn(p, 1);
-                RespawnItemBuilder.setStarterItems(p);
                 e.setDeathMessage(Main.getPrefix() + " §c" + k.getName() + " §7hat §e" + p.getName() + " §7getötet");
                 new ActionBarBuilder("§7Du hast §a" + Main.getInstance().killcoins + " §7bekommen").send(k);
             }else{
@@ -55,7 +54,6 @@ public class DamageEvent implements Listener {
                     }
                 }
                 RespawnBuilder.respawn(p, 1);
-                RespawnItemBuilder.setStarterItems(p);
                 e.setDeathMessage(Main.getPrefix() + " §e" + p.getName() + " §7ist von selbst gestorben");
             }
 

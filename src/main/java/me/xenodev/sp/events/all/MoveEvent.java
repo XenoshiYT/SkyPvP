@@ -22,7 +22,6 @@ public class MoveEvent implements Listener {
             Location loc = LocationFilebuilder.getLocation("Spawn");
             p.teleport(loc);
             StatsFilebuilder.addDeaths(p, 1);
-            RespawnItemBuilder.setStarterItems(p);
             p.sendMessage(Main.getPrefix() + " §cDu bist zu weit runter gefallen und wurdest respawnt");
         }
 
