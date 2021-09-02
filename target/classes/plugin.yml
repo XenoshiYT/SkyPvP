@@ -31,3 +31,5 @@ commands:
     description: Lade die Configs neu
   enchant:
     description: Setze custom Enchantmenlevel auf ein Item
+  standard:
+    description: Hole dir die Standard-Ausrüstung
